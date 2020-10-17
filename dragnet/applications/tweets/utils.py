@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 import tweepy
 import os
 
@@ -28,9 +26,12 @@ for i in tweets:
 
 
 print('\n Tweets mencion de BBVA:')
-tt = list()
-tt.extend(api.search(q='bbva', count=5, tweet_mode='extended'))
-#print(tt.__dict__)
-for t in tt:
-    t.author = t.user.escreen_name
-    t.location = t.user.location
+def get_all_realted_tweets():
+
+    tt = list()
+    tt.extend(api.search(q='bbva', count=5, tweet_mode='extended'))
+    # print(tt.__dict__)
+    for t in tt:
+        t.author = t.user.escreen_name
+        t.location = t.user.location
+    return tt

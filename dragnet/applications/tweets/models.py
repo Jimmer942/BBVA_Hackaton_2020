@@ -4,7 +4,7 @@ from django.db import models
 class TweetModel(models.Model):
 
     text = models.CharField(name='text', max_length=250)
-    id = models.IntegerField()
+    id = models.IntegerField(primary_key=True)
     usuario = models.CharField(name='usuario', max_length=250)
     fecha = models.DateField(name='fecha_creacion')
     likes = models.IntegerField(name='n_likes')
